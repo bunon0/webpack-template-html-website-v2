@@ -15,7 +15,11 @@ html {
 
   // 0px-
   // clam関数(最小値,vw,最大値)の設定
-  font-size: clamp(12px, #{g.vw(g.strip-unit(g.$base-font-size), g.strip-unit(g.$xs))}, #{g.$base-font-size});
+  font-size: clamp(
+    12px,
+    #{g.vw(g.strip-unit(g.$base-font-size), g.strip-unit(g.$xs))},
+    #{g.$base-font-size}
+  );
 
   // 375px-
   @include g.mq("xs") {
@@ -24,7 +28,11 @@ html {
 
   // 787px-inner
   @include g.mq("md") {
-    font-size: clamp(12px, #{g.vw(g.strip-unit(g.$base-font-size), g.strip-unit((g.$xl)))}, #{g.$base-font-size});
+    font-size: clamp(
+      12px,
+      #{g.vw(g.strip-unit(g.$base-font-size), g.strip-unit((g.$xl)))},
+      #{g.$base-font-size}
+    );
   }
 
   // inner
