@@ -7,9 +7,9 @@ module.exports = {
   jsxSingleQuote: false,
   endOfLine: "lf",
   bracketSpacing: true,
-  jsxBracketSameLine: true,
+  bracketSameLine: true,
   bracketSpacing: true,
-  arrowParens: avoid,
+  arrowParens: "avoid",
 
   overrides: [
     {
