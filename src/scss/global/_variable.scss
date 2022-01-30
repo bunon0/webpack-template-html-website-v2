@@ -1,0 +1,34 @@
+// color
+$base-bg-color: #000;
+$base-text-color: #fff;
+
+// font
+$base-font-family: "Meiryo", "メイリオ", sans-serif;
+$second-font-family: "";
+$base-font-size: 16px;
+$base-line-height: 1.5;
+
+// layout
+// サイト共通のinner幅 左右のpaddingを含めた数値を設定
+$container: 1240px;
+
+// ブレイクポイント
+$xs: 375px; // spサイズ
+$sm: 576px;
+$md: 768px; // tabサイズ
+$lg: 992px;
+$xl: $container; // pcサイズ
+$xxl: 1400px;
+$breakpoints: (
+  "xs": "(min-width: #{$xs})",
+  "sm": "(min-width: #{$sm})",
+  "md": "(min-width: #{$md})",
+  "lg": "(min-width: #{$lg})",
+  "xl": "(min-width: #{$xl})",
+  "xxl": "(min-width: #{$xxl})",
+);
+
+// z-index
+$layer: (
+  "header": "",
+);

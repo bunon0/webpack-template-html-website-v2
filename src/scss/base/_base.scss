@@ -1,0 +1,65 @@
+@charset "UTF-8";
+@use "../global/" as g;
+
+/* ========================================================
+* Base
+======================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* リキッドレイアウト対応する場合 px（固定値は消してOK） */
+
+  // 0px-
+  // clam関数(最小値,vw,最大値)の設定
+  font-size: clamp(
+    12px,
+    #{g.vw(g.strip-unit(g.$base-font-size), g.strip-unit(g.$xs))},
+    #{g.$base-font-size}
+  );
+
+  // 375px-
+  @include g.mq("xs") {
+    font-size: g.$base-font-size;
+  }
+
+  // 787px-inner
+  @include g.mq("md") {
+    font-size: clamp(
+      12px,
+      #{g.vw(g.strip-unit(g.$base-font-size), g.strip-unit((g.$xl)))},
+      #{g.$base-font-size}
+    );
+  }
+
+  // inner
+  @media (min-width: g.$container) {
+    font-size: g.$base-font-size;
+  }
+}
+
+body {
+  font-family: g.$base-font-family;
+  font-size: g.$base-font-size;
+  line-height: g.$base-line-height;
+  background-color: g.$base-bg-color;
+  color: g.$base-text-color;
+  word-break: break-all;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+a {
+  display: inline-block;
+  color: inherit;
+}
+
+/* Base
+----------------------------------------- */

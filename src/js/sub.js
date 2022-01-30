@@ -1,3 +1,3 @@
-export function hello() {
-	alert("helloメソッドが実行された。");
-}
+export const hello = () => {
+  alert("helloメソッドが実行された。");
+};
