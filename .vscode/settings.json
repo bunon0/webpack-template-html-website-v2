@@ -1,8 +1,13 @@
 {
+  "stylelint.validate": ["css", "scss"],
+  "scss.validate": false,
+  "css.validate": false,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
   },
-  "eslint.validate": ["javascript"]
+  "eslint.validate": ["javascript"],
+  "cSpell.words": ["optimizespeed"]
 }

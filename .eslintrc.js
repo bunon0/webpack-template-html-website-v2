@@ -5,10 +5,7 @@ module.exports = {
     node: true,
   },
   plugins: [],
-  extends: [
-    // "some-other-config-you-use",
-    "prettier",
-  ],
+  extends: ["prettier"],
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
