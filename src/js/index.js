@@ -1,3 +1,4 @@
+import "../css/styles.css";
 import { hello } from "./sub";
 
 console.log("index.js");

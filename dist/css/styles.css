@@ -1,0 +1,10 @@
+body {
+	background-color: yellow;
+}
+
+.test {
+	display: flex;
+	width: 100%;
+	background-color: pink;
+}
+

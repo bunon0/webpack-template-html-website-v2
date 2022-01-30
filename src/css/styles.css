@@ -1,0 +1,7 @@
+@import url("sub.css");
+
+.test {
+	display: flex;
+	width: 100%;
+	background-color: pink;
+}
