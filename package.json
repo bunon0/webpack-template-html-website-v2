@@ -8,12 +8,14 @@
 		"start": "webpack serve",
 		"dev": "webpack --mode development",
 		"watch": "webpack --watch",
-    "lint": "run-p --continue-on-error lint:*",
+		"lint": "run-p --continue-on-error lint:*",
 		"lint:eslint": "eslint --ext .js",
 		"lint:prettier": "prettier --check .",
-    "fix": "run-s --continue-on-error fix:eslint fix:prettier",
+		"lint:stylelint": "stylelint src/**/_*.scss src/**/*.{css,scss}",
+		"fix": "run-s --continue-on-error fix:eslint fix:prettier",
 		"fix:eslint": "eslint --ext .js . --fix",
-		"fix:prettier": "prettier --write ."
+		"fix:prettier": "prettier --write .",
+		"fix:stylelint": "stylelint src/**/_*.scss src/**/*.scss --fix"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.16.12",
@@ -35,6 +37,10 @@
 		"sass": "^1.49.0",
 		"sass-loader": "^12.4.0",
 		"style-loader": "^3.3.1",
+		"stylelint": "^14.3.0",
+		"stylelint-config-prettier": "^9.0.3",
+		"stylelint-config-standard": "^24.0.0",
+		"stylelint-config-standard-scss": "^3.0.0",
 		"webpack": "^5.67.0",
 		"webpack-cli": "^4.9.2",
 		"webpack-dev-server": "^4.7.3"
