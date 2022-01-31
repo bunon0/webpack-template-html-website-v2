@@ -8,7 +8,6 @@ module.exports = {
   endOfLine: "lf",
   bracketSpacing: true,
   bracketSameLine: true,
-  bracketSpacing: true,
   arrowParens: "avoid",
 
   overrides: [
