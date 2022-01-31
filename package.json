@@ -5,9 +5,8 @@
 	"license": "MIT",
 	"scripts": {
 		"build": "webpack --mode production",
-		"start": "webpack serve",
-		"dev": "webpack --mode development",
-		"watch": "webpack --watch",
+		"dev": "webpack serve --mode development",
+		"watch": "webpack --mode development --watch",
 		"lint": "run-p --continue-on-error lint:*",
 		"lint:eslint": "eslint --ext .js",
 		"lint:prettier": "prettier --check .",

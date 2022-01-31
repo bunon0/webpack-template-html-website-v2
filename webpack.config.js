@@ -23,18 +23,18 @@ module.exports = {
           },
         ],
       },
-      {
-        test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: "css-loader",
-            options: {
-              url: false,
-            },
-          },
-        ],
-      },
+      // {
+      //   test: /\.css$/,
+      //   use: [
+      //     MiniCssExtractPlugin.loader,
+      //     {
+      //       loader: "css-loader",
+      //       options: {
+      //         url: false,
+      //       },
+      //     },
+      //   ],
+      // },
       {
         test: /\.scss$/,
         use: [
