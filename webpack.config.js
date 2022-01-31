@@ -1,4 +1,8 @@
+const path = require("path");
+const TerserPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   entry: `./src/js/index.js`,
@@ -11,6 +15,17 @@ module.exports = {
   devServer: {
     static: "dist",
     open: true,
+    // watchFiles: ["src/templates/**/*"],
+  },
+
+  //パッケージのライセンス情報をjsファイルの中に含める
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        extractComments: false,
+      }),
+      new CssMinimizerPlugin(),
+    ],
   },
 
   module: {
@@ -37,6 +52,7 @@ module.exports = {
       // },
       {
         test: /\.scss$/,
+        include: path.resolve(__dirname, "src/scss/"),
         use: [
           MiniCssExtractPlugin.loader,
           {
@@ -52,9 +68,13 @@ module.exports = {
       },
     ],
   },
+
   target: ["web", "es5"],
 
   plugins: [
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: ["**/*", "!**.html"],
+    }),
     new MiniCssExtractPlugin({
       filename: "css/styles.css",
     }),
