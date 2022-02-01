@@ -78,11 +78,11 @@ module.exports = {
   target: ["web", "es5"],
 
   plugins: [
-    new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: ["**/*"],
-    }),
+    new CleanWebpackPlugin({}),
     new HtmlWebpackPlugin({
       template: "./src/templates/index.html",
+      inject: false,
+      minify: false,
     }),
     new MiniCssExtractPlugin({
       filename: "./css/styles.css",
