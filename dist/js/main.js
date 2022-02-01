@@ -1,0 +1,1 @@
+!function(){"use strict";console.log("index.js"),console.log("helloメソッドが実行された。")}();
