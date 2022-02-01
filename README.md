@@ -21,7 +21,7 @@
 - ESLint
 
 ### formatter
-- prettierを
+- prettier
 
 ## 使い方
 各packageのインストール
