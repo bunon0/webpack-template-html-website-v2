@@ -9,5 +9,10 @@
     "source.fixAll.stylelint": true
   },
   "eslint.validate": ["javascript"],
-  "cSpell.words": ["optimizespeed"]
+  "cSpell.ignorePaths": [
+    "**/package-lock.json",
+    "**/yarn.lock",
+    "**/node_modules/**",
+    ".vscode"
+  ]
 }
