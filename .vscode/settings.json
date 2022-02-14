@@ -10,9 +10,11 @@
   },
   "eslint.validate": ["javascript"],
   "cSpell.ignorePaths": [
+    "**/package.json",
     "**/package-lock.json",
     "**/yarn.lock",
     "**/node_modules/**",
+    "**/webpack.config.js/**",
     ".vscode"
   ]
 }
