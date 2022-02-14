@@ -5,9 +5,8 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
-const ImageminPlugin = require("imagemin-webpack-plugin").default;
-const ImageminMozjpeg = require("imagemin-mozjpeg");
 const globule = require("globule");
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
 const app = {
   mode: "development",
@@ -96,18 +95,36 @@ const app = {
         },
       ],
     }),
-    new ImageminPlugin({
-      test: /\.(jpe?g|png|gif|svg)$/i,
-      plugins: [
-        ImageminMozjpeg({
-          quality: 89,
-          progressive: true,
-        }),
-      ],
-      pngquant: {
-        quality: "80-89",
+    // new ImageMinimizerPlugin({
+    //   test: /\.(png|jpe?g)$/i,
+    //   minimizer: {
+    //     filename: "[path][name][ext].webp",
+    //     implementation: ImageMinimizerPlugin.squooshMinify,
+    //     options: {
+    //       encodeOptions: {
+    //         webp: {
+    //           lossless: 1,
+    //         },
+    //       },
+    //     },
+    //   },
+    // }),
+    new ImageMinimizerPlugin({
+      test: /\.(png|jpe?g)$/i,
+      minimizer: {
+        implementation: ImageMinimizerPlugin.squooshMinify,
+        options: {
+          encodeOptions: {
+            mozjpeg: {
+              quality: 85,
+            },
+            oxipng: {
+              level: 3,
+              interlace: false,
+            },
+          },
+        },
       },
-      svgo: {},
     }),
   ],
 
