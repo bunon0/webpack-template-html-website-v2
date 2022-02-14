@@ -4,6 +4,7 @@ module.exports = {
   ignoreFiles: ["node_modules/**/*.css", "dist/**/*.css"],
   rules: {
     "at-rule-no-unknown": null,
+    "selector-class-pattern": null,
     "scss/at-rule-no-unknown": true,
     "plugin/selector-bem-pattern": {
       componentName: "[A-Z]+",
