@@ -14,7 +14,9 @@
     "**/package-lock.json",
     "**/yarn.lock",
     "**/node_modules/**",
-    "**/webpack.config.js/**",
-    ".vscode"
+    "**/webpack.config.js",
+    ".vscode",
+    "src/js/libs",
+    "src/scss/libs"
   ]
 }

@@ -1,0 +1,6 @@
+@use "../../global/" as g;
+
+.c-test {
+  background-color: indianred;
+  font-size: g.rem(16, 20);
+}

@@ -6,33 +6,44 @@
 
 :root,
 :root[theme="LIGHT"] {
-  --c-main-color: black;
-  --c-sub-color: white;
-  --f-base-font-family: "meiryo, メイリオ, sans-serif";
-  --f-second-font-family: "";
-  --f-base-font-size: 16px;
-  --f-base-line-height: 1.5;
+  --f-base-family: "meiryo, メイリオ, sans-serif";
+  --f-second-family: "";
+  --f-font-size: 16px;
+  --f-line-height: 1.5;
+  --f-regular: 400;
+  --f-medium: 500;
+  --f-bold: 700;
+  --f-black: 900;
+  --c-main: #000;
+  --c-sub: #fff;
+  --c-primary: #4b6cb7;
+  --c-secondary: #b8614b;
+  --c-tertiary: #3da9fc;
 }
 
 html {
+  font-size: 16px;
+
   // リキッドレイアウト
-  // 1200px-20px 320px-12px 最小値12px 最大値20px の範囲で可変する
-  font-size: clamp(
-    12px,
-    calc(12px + (20 - 12) / (1200 - 320) * (100vw - 320px)),
-    20px
-  );
+  // 768px-12px 1200px-16px 最小値12px 最大値20px の範囲で可変する
+  @include g.mq("md") {
+    font-size: clamp(
+      12px,
+      calc(12px + (16 - 12) / (g.strip-unit(g.$xl) - g.strip-unit(g.$md)) * (100vw - g.$md)),
+      16px
+    );
+  }
 
   /* Fix Safari bug with viewport units in calc() */
   min-height: 0;
 }
 
 body {
-  font-family: var(--f-base-font-family);
-  font-size: var(--f-base-font-size);
-  line-height: var(--f-base-line-height);
-  background-color: var(--c-main-color);
-  color: var(--c-sub-color);
+  font-family: var(--f-base-family);
+  font-size: var(--f-font-size);
+  line-height: var(--f-line-height);
+  background-color: var(--c-main);
+  color: var(--c-sub);
   word-break: break-all;
 }
 
@@ -45,4 +56,6 @@ img {
 a {
   display: inline-block;
   color: inherit;
+  cursor: pointer;
+  text-decoration: none;
 }

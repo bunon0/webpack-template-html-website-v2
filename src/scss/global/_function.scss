@@ -21,7 +21,7 @@
   @return math.div($number, ($number * 0 + 1));
 }
 
-// z-indexを$layer
+// z-indexを$layerから取り出す
 @function z-index($z-index) {
   @return map-get(v.$layer, $z-index);
 }
@@ -33,5 +33,5 @@
 
 // letter-spacing
 @function l-spacing($spacing) {
-  @return math.dev($spacing, 1000) * 1em;
-} ;
+  @return math.div($spacing, 1000) * 1em;
+}
